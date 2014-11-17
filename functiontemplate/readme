@@ -1,0 +1,30 @@
+
+
+模板的两种编译模型
+1、包含编译
+   1、1 函数模板
+        //funcTemp1.h
+		//函数声明
+	    #incldue "./funcTemp1.cpp"  //包含函数实现
+
+
+   1、2 类模版
+		同 函数模版       
+
+
+2、分别编译
+    2、1 函数模版
+         //funcTemp1.h
+         只包含函数声明
+
+         //funcTemp1.cpp
+         export template<class T> 函数定义
+
+    2、2 类模版
+         //classTemp2.h
+         只包含类体的定义
+
+         //classTemp2.cpp
+		 export template<class T> class CObj;
+         #include "classTemp2.h"
+         //类的成员
