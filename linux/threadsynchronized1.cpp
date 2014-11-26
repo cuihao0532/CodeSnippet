@@ -3,7 +3,7 @@
 #include <iostream>
 #include <pthread.h>
 #include <stdlib.h>
-#include  <unistd.h> 
+#include <unistd.h> 
 using namespace std;
 
 //thread function
@@ -19,6 +19,8 @@ void*  start_routine(void* p)
 		cout << i << endl;
 		usleep(1000 * 800);   //800 ms	
 	}
+
+	cout << endl << "This thread ID is " << pthread_self() << endl;
 
 	return 0;
 }
@@ -39,9 +41,11 @@ int main()
 	{
 		cout << endl << "wait for thread " << ptThread1 << endl;
 		void* pRetVal = 0;
-        int nJoinRet = pthread_join(ptThread1, &pRetVal);
+        int nJoinRet = pthread_join(ptThread1, (void**)&pRetVal);
 		cout << endl << "thread " << ptThread1 << " finished !" << endl;
+		cout << "thread return value is " << (char*)pRetVal << endl;
 	}
+	cout << endl;
 
 	delete pLoops;
 	pLoops = 0;
