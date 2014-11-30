@@ -1,7 +1,4 @@
-#include <iostream>
-#include <pthread.h>
-#include <unistd.h>
-#include <semaphore.h>
+
 
 /**********************************************
  *
@@ -28,6 +25,10 @@ All the functions above Return Zero IF SUCCESS !
 
 *************************************************/ 
 
+#include <iostream>
+#include <pthread.h>
+#include <unistd.h>
+#include <semaphore.h>
 using namespace std;
 
 sem_t g_semt;
