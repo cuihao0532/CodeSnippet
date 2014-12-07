@@ -78,6 +78,7 @@ int _tmain(int argc, _TCHAR* argv[])
 			int nErrCode = WSAGetLastError();
 			if (WSAEWOULDBLOCK == nErrCode 
 				|| WSAEALREADY == nErrCode   //在一个非阻止性套接字上尝试了一个已经在进行的操作
+				|| WSAEINVAL   == nErrCode
 				)
 			{
 				Sleep(10);
