@@ -310,7 +310,7 @@ int _tmain(int argc, _TCHAR* argv[])
 				} //else
 				
 
-			} //if (FD_ISSET(sockArray[i], &fdRead))
+			} //if (FD_ISSET(sock, &fdRead))
 
 		} //for
 
