@@ -50,6 +50,8 @@ CWSAAsyncSelect_TCP_ServerDlg::~CWSAAsyncSelect_TCP_ServerDlg()
 	{
 		closesocket(iter->sock);
 	}
+
+	WSACleanup();
 }
 
  
