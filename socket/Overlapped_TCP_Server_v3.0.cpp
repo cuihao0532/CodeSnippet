@@ -418,6 +418,7 @@ unsigned int __stdcall WorkThread(void* p)
 				ShowMsg(g_ovp.sockets[dwIndex], &(g_ovp.sockClientAddr[dwIndex]), false);
 			}
 
+			closesocket(g_ovp.sockets[dwIndex]); //need to close it
 			g_ovp.bOccupied[dwIndex] = false;
 		}
 
